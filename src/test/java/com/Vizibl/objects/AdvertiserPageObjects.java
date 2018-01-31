@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
+
+//Advertiser web elements
 public class AdvertiserPageObjects {
 	public AdvertiserPageObjects(WebDriver driver) {
 		PageFactory.initElements(driver, this);
