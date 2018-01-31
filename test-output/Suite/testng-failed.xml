@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <test name="Test(failed)">
+    <classes>
+      <class name="ViziblAdmin.Testcases.ForgetPassword">
+        <methods>
+          <include name="afterClass"/>
+          <include name="initiate"/>
+        </methods>
+      </class> <!-- ViziblAdmin.Testcases.ForgetPassword -->
+      <class name="ViziblAdmin.Testcases.Registration">
+        <methods>
+          <include name="initiate"/>
+          <include name="advertiserRegistration" invocation-numbers="0"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- ViziblAdmin.Testcases.Registration -->
+      <class name="ViziblAdmin.Testcases.ChangePassword">
+        <methods>
+          <include name="afterClass"/>
+          <include name="initiate"/>
+        </methods>
+      </class> <!-- ViziblAdmin.Testcases.ChangePassword -->
+      <class name="ViziblAdmin.Testcases.LoginPage">
+        <methods>
+          <include name="afterClass"/>
+          <include name="initiate"/>
+        </methods>
+      </class> <!-- ViziblAdmin.Testcases.LoginPage -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

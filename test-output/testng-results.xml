@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="6" passed="6">
+  <reporter-output>
+    <line>
+      <![CDATA[Verfied the Title of the Vizibl page]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="57653" started-at="2018-01-31T09:37:21Z" finished-at="2018-01-31T09:38:19Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="57653" started-at="2018-01-31T09:37:21Z" finished-at="2018-01-31T09:38:19Z">
+      <class name="com.Vizibl.Testcases.LoginPage">
+        <test-method status="PASS" signature="initiate()[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="initiate" is-config="true" duration-ms="12284" started-at="2018-01-31T15:07:21Z" finished-at="2018-01-31T15:07:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initiate -->
+        <test-method status="PASS" signature="adminLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="adminLogin" duration-ms="4703" started-at="2018-01-31T15:07:36Z" data-provider="adminLogin" finished-at="2018-01-31T15:07:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[srinivasarao.r@datawrkz.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[12sriniva,]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminLogin -->
+        <test-method status="PASS" signature="adminLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="adminLogin" duration-ms="4676" started-at="2018-01-31T15:07:41Z" data-provider="adminLogin" finished-at="2018-01-31T15:07:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Datawrkz1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Email Id can't be blank]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminLogin -->
+        <test-method status="PASS" signature="adminLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="adminLogin" duration-ms="7732" started-at="2018-01-31T15:07:46Z" data-provider="adminLogin" finished-at="2018-01-31T15:07:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[srinivasarao.r@datawrkz.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Datawrkz1234]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Invalid credentials...!!!]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminLogin -->
+        <test-method status="PASS" signature="adminLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="adminLogin" duration-ms="6526" started-at="2018-01-31T15:07:54Z" data-provider="adminLogin" finished-at="2018-01-31T15:08:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[srinivasarao@datawrkz.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Datawrkz1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Invalid credentials...!!!]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminLogin -->
+        <test-method status="PASS" signature="adminLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="adminLogin" duration-ms="4034" started-at="2018-01-31T15:08:00Z" data-provider="adminLogin" finished-at="2018-01-31T15:08:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminLogin -->
+        <test-method status="PASS" signature="validLogin()[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="validLogin" duration-ms="5379" started-at="2018-01-31T15:08:04Z" finished-at="2018-01-31T15:08:09Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Verfied the Title of the Vizibl page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- validLogin -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="afterClass" is-config="true" duration-ms="9140" started-at="2018-01-31T15:08:09Z" finished-at="2018-01-31T15:08:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.Vizibl.Testcases.LoginPage -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
