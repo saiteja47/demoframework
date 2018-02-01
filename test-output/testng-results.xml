@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
-    <line>
-      <![CDATA[Verfied the Title of the Vizibl page]]>
-    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="57653" started-at="2018-01-31T09:37:21Z" finished-at="2018-01-31T09:38:19Z">
+  <suite name="Default suite" duration-ms="64940" started-at="2018-02-01T14:12:43Z" finished-at="2018-02-01T14:13:48Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="57653" started-at="2018-01-31T09:37:21Z" finished-at="2018-01-31T09:38:19Z">
-      <class name="com.Vizibl.Testcases.LoginPage">
-        <test-method status="PASS" signature="initiate()[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="initiate" is-config="true" duration-ms="12284" started-at="2018-01-31T15:07:21Z" finished-at="2018-01-31T15:07:33Z">
+    <test name="Default test" duration-ms="64940" started-at="2018-02-01T14:12:43Z" finished-at="2018-02-01T14:13:48Z">
+      <class name="com.Vizibl.Testcases.Registration">
+        <test-method status="PASS" signature="initiate()[pri:0, instance:com.Vizibl.Testcases.Registration@6ebc05a6]" name="initiate" is-config="true" duration-ms="15939" started-at="2018-02-01T19:42:43Z" finished-at="2018-02-01T19:42:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initiate -->
-        <test-method status="PASS" signature="adminLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="adminLogin" duration-ms="4703" started-at="2018-01-31T15:07:36Z" data-provider="adminLogin" finished-at="2018-01-31T15:07:41Z">
+        <test-method status="PASS" signature="advertiserRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.Registration@6ebc05a6]" name="advertiserRegistration" duration-ms="7107" started-at="2018-02-01T19:43:03Z" data-provider="advertiserRegistration" finished-at="2018-02-01T19:43:10Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[srinivasarao.r@datawrkz.com]]>
+                <![CDATA[Advertiser]]>
               </value>
             </param>
             <param index="1">
@@ -28,89 +25,439 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[12sriniva,]]>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[cancle]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Client Type can not be blank, Organization Name can't be blank, First Name can't be blank, Last Name can't be blank, Email Id can't be blank,Password can't be blank, Confirm Password can't be blank, Contact Number can't be blank, Website can't be blank, Address can't be blank, Country Name can't be blank, City Name can't be blank,Pincode Number can't be blank,]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- adminLogin -->
-        <test-method status="PASS" signature="adminLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="adminLogin" duration-ms="4676" started-at="2018-01-31T15:07:41Z" data-provider="adminLogin" finished-at="2018-01-31T15:07:46Z">
+        </test-method> <!-- advertiserRegistration -->
+        <test-method status="PASS" signature="advertiserRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.Registration@6ebc05a6]" name="advertiserRegistration" duration-ms="8329" started-at="2018-02-01T19:43:10Z" data-provider="advertiserRegistration" finished-at="2018-02-01T19:43:18Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[]]>
+                <![CDATA[Agency]]>
               </value>
             </param>
             <param index="1">
+              <value>
+                <![CDATA[Organiz]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Data]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[wrkz]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[s.rinivasaraor5945gmail.com]]>
+              </value>
+            </param>
+            <param index="5">
               <value>
                 <![CDATA[Datawrkz1]]>
               </value>
             </param>
-            <param index="2">
+            <param index="6">
               <value>
-                <![CDATA[Email Id can't be blank]]>
+                <![CDATA[Datawrkz12]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[9876543]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[www.#.com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[1234#1]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[karantaka]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[523]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[Submit]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Email id is invalid, Confirm Password is not same as Password, Password length should be Greater than 8, Website is invalid,]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- adminLogin -->
-        <test-method status="PASS" signature="adminLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="adminLogin" duration-ms="7732" started-at="2018-01-31T15:07:46Z" data-provider="adminLogin" finished-at="2018-01-31T15:07:54Z">
+        </test-method> <!-- advertiserRegistration -->
+        <test-method status="PASS" signature="advertiserRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.Registration@6ebc05a6]" name="advertiserRegistration" duration-ms="9891" started-at="2018-02-01T19:43:18Z" data-provider="advertiserRegistration" finished-at="2018-02-01T19:43:28Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[srinivasarao.r@datawrkz.com]]>
+                <![CDATA[Advertiser]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Datawrkz1234]]>
+                <![CDATA[My Organization]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Invalid credentials...!!!]]>
+                <![CDATA[Data]]>
               </value>
             </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- adminLogin -->
-        <test-method status="PASS" signature="adminLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="adminLogin" duration-ms="6526" started-at="2018-01-31T15:07:54Z" data-provider="adminLogin" finished-at="2018-01-31T15:08:00Z">
-          <params>
-            <param index="0">
+            <param index="3">
               <value>
-                <![CDATA[srinivasarao@datawrkz.com]]>
+                <![CDATA[wrkz]]>
               </value>
             </param>
-            <param index="1">
+            <param index="4">
+              <value>
+                <![CDATA[s.rinivasaraor5945@gmailcom]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Datawrkz1$]]>
+              </value>
+            </param>
+            <param index="6">
               <value>
                 <![CDATA[Datawrkz1]]>
               </value>
             </param>
-            <param index="2">
+            <param index="7">
               <value>
-                <![CDATA[Invalid credentials...!!!]]>
+                <![CDATA[98765432101234567]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[#ba.com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[HSR Layout]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[karantaka]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[52300812345678901]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[cancle]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Email id is invalid, Special Charater Not allowed, Confirm Password is not same as Password, Contact Number length should be less than 16, Website is invalid, Pincode Number can't be greater than 16,]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- adminLogin -->
-        <test-method status="PASS" signature="adminLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="adminLogin" duration-ms="4034" started-at="2018-01-31T15:08:00Z" data-provider="adminLogin" finished-at="2018-01-31T15:08:04Z">
+        </test-method> <!-- advertiserRegistration -->
+        <test-method status="PASS" signature="advertiserRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.Registration@6ebc05a6]" name="advertiserRegistration" duration-ms="8930" started-at="2018-02-01T19:43:28Z" data-provider="advertiserRegistration" finished-at="2018-02-01T19:43:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[]]>
+                <![CDATA[Agency]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[]]>
+                <![CDATA[My Organization]]>
               </value>
             </param>
             <param index="2">
+              <value>
+                <![CDATA[Data]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[wrkz]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[srinivasaraor5945@gmail.com]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Da1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Datawrkz1]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[srinvasarao]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[www.#com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[HSR Layout123]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[karantaka]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[523009]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[cancle]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Email id is invalid,First Name is invalid,Confirm Password is not same as Password,Contact Number Invalid,Website is invalid,]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- advertiserRegistration -->
+        <test-method status="PASS" signature="advertiserRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.Registration@6ebc05a6]" name="advertiserRegistration" duration-ms="7940" started-at="2018-02-01T19:43:37Z" data-provider="advertiserRegistration" finished-at="2018-02-01T19:43:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Advertiser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[My Organization]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Data]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[wrkz]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[s.rinivasaraor5945@gmail.com]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Datawrkz1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Datawrkz1]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[9876543211]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[www.cba.com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[HSR Layout]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[karantaka]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[523010]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[cancle]]>
+              </value>
+            </param>
+            <param index="16">
               <value>
                 <![CDATA[]]>
               </value>
@@ -118,19 +465,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- adminLogin -->
-        <test-method status="PASS" signature="validLogin()[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="validLogin" duration-ms="5379" started-at="2018-01-31T15:08:04Z" finished-at="2018-01-31T15:08:09Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Verfied the Title of the Vizibl page]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- validLogin -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.Vizibl.Testcases.LoginPage@2b552920]" name="afterClass" is-config="true" duration-ms="9140" started-at="2018-01-31T15:08:09Z" finished-at="2018-01-31T15:08:19Z">
+        </test-method> <!-- advertiserRegistration -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.Vizibl.Testcases.Registration@6ebc05a6]" name="afterClass" is-config="true" duration-ms="3478" started-at="2018-02-01T19:43:45Z" finished-at="2018-02-01T19:43:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- com.Vizibl.Testcases.LoginPage -->
+      </class> <!-- com.Vizibl.Testcases.Registration -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

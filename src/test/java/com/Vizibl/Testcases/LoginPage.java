@@ -35,10 +35,9 @@ public class LoginPage extends BaseClass {
 			webutils.waitUntilVisibile(loginpageObjects.getPassWord());
 			webutils.sendkeys(loginpageObjects.getPassWord(), password);
 			webutils.waitUntilVisibile(loginpageObjects.getSignIn_button());
-			Assert.assertTrue(webutils.verifyErrorMSg2(loginpageObjects.getErrorMessages(), expectedResult));
 			webutils.click(loginpageObjects.getSignIn_button());
+			Assert.assertTrue(webutils.verifyErrorMSg2(loginpageObjects.getErrorMessages(), expectedResult));
 			webutils.sleep();
-			
 	
 		} 
 		catch (Exception n) {
@@ -55,10 +54,9 @@ public class LoginPage extends BaseClass {
 			webutils.sendkeys(loginpageObjects.getPassWord(), Constants.password2);
 			webutils.click(loginpageObjects.getRememberme_check());
 			webutils.click(loginpageObjects.getSignIn_button());
-			
 			assertEquals("Vizibl", webutils.getitle());
 			Reporter.log("Verfied the Title of the Vizibl page");
-			
+			webutils.logOut();
 			/*webutils.newWindow();
 			webutils.navigate("viziblbeta.datawrkz.com");
 			assertEquals("Advertisers", commonObjects.getAdvertiser_Tiitle());*/
@@ -70,7 +68,7 @@ public class LoginPage extends BaseClass {
 
 	@AfterClass
 	public void afterClass() throws Exception {
-		webutils.logOut();
+		
 		webutils.quit();
 	}
 
@@ -78,9 +76,9 @@ public class LoginPage extends BaseClass {
 	public static Object[][] adminLogin() throws Exception {
 		Excelconfig config = new Excelconfig();
 		int totalrows = config.getRowcount(0);
-		System.out.println(totalrows);
+		//System.out.println(totalrows);
 		int totalcolumns = config.getColumnCount("Login", 2);
-		System.out.println(totalcolumns);
+		//System.out.println(totalcolumns);
 		Object[][] data = new Object[totalrows - 2][totalcolumns - 5];
 		for (int i = 2; i < totalrows ; i++) {
 			for (int j = 5; j < totalcolumns; j++) {

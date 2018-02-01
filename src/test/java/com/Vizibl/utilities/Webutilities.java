@@ -86,23 +86,34 @@ public class Webutilities extends BaseClass {
 
 	public boolean verifyErrorMSg(List<WebElement> elements, String value) {
 		String[] values=value.split(",");
-		int count=0;
+				//int count=0;
+	
 		for (WebElement element : elements) {
-		for(int i=0;i<values.length;i++) {
-			if (element.getText().trim().equalsIgnoreCase(values[i].trim()));
-			count++;
+			for(int i=0;i<values.length;i++) {			
+			String excelMessage=values[i].toString().trim();
+		
+			String Webelemen= element.getText().toString().trim();
+			
+			if (Webelemen.equalsIgnoreCase(excelMessage)) {
+				
+			//count++;
+			System.out.println("result1"+element.getText().toString());
 		}
-		if(count==values.length) {
-			return true;
 		}
+//		if(count==values.length) {
+//			return true;
+//		}
 		}
 		return false;
 	}
 	public boolean verifyErrorMSg2(List<WebElement> elements, String value) {
-		
+		if(value!="") {
 		for (WebElement element : elements) {
-			if (element.getText().equalsIgnoreCase(value));
-			return true;
+			System.out.println("result:"+element.getText().toString());
+			if (element.getText().equalsIgnoreCase(value)){
+				return true;
+			}
+		}
 		}
 		return false;
 	}
@@ -133,6 +144,7 @@ public class Webutilities extends BaseClass {
 			}
 		} catch (Exception e) {
 			Thread.sleep(1000);
+			e.printStackTrace();
 			
 		}
 		return false;

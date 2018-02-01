@@ -39,7 +39,7 @@ public class Excelconfig {
 		sheet = workbook.getSheetAt(sheetnum);
 		Cell cell = sheet.getRow(rownum).getCell(cellnum);
 		String celldata = df.formatCellValue(cell);
-		System.out.println(celldata);
+		//System.out.println(celldata);
 		return celldata;
 	}
 }

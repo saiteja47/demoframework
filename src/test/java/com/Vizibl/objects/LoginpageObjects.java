@@ -14,7 +14,7 @@ public class LoginpageObjects
 		PageFactory.initElements(driver, this);
 	}
   
-	@FindBys({ @FindBy(xpath = "//div[@class='form-group']/abcd") })
+	@FindBys({ @FindBy(xpath = "//div[@class='input-icon' or @class='portlet-body']/abcd") })
 	private List<WebElement> errorMessages;
 	
 	public  List<WebElement> getErrorMessages() {
