@@ -1,10 +1,5 @@
 package com.Vizibl.utilities;
 
-import java.io.File;
-import java.io.IOException;
-import org.apache.maven.shared.utils.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;

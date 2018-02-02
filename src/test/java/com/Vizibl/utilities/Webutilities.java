@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
@@ -29,16 +30,17 @@ public class Webutilities extends BaseClass {
 	public void waitForPageToLoad() {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
-	
+
 	public String getitle() {
-	String Actual=driver.getTitle();
+		String Actual = driver.getTitle();
 		return Actual;
 	}
+
 	public String gettext(WebElement element) {
 		element.isDisplayed();
-		String text=element.getText();
+		String text = element.getText();
 		return text;
-		
+
 	}
 
 	public void logOut() throws InterruptedException {
@@ -48,12 +50,13 @@ public class Webutilities extends BaseClass {
 		sleep();
 
 	}
+
 	public void newWindow() {
-		actions.sendKeys(Keys.chord(Keys.CONTROL,"T")).perform();
-		Set<String>śet=driver.getWindowHandles();
-		Iterator<String> it=śet.iterator();
-		String parentWindID=it.next();
-		String chaildWindowID=it.next();
+		actions.sendKeys(Keys.chord(Keys.CONTROL, "T")).perform();
+		Set<String> śet = driver.getWindowHandles();
+		Iterator<String> it = śet.iterator();
+		String parentWindID = it.next();
+		String chaildWindowID = it.next();
 		driver.switchTo().window(chaildWindowID);
 	}
 
@@ -70,7 +73,7 @@ public class Webutilities extends BaseClass {
 			result = true;
 		} catch (Throwable t) {
 			throw new Exception(t.getMessage());
-		
+
 		}
 	}
 
@@ -85,35 +88,46 @@ public class Webutilities extends BaseClass {
 	}
 
 	public boolean verifyErrorMSg(List<WebElement> elements, String value) {
-		String[] values=value.split(",");
-				//int count=0;
-	
-		for (WebElement element : elements) {
-			for(int i=0;i<values.length;i++) {			
-			String excelMessage=values[i].toString().trim();
-		
-			String Webelemen= element.getText().toString().trim();
-			
-			if (Webelemen.equalsIgnoreCase(excelMessage)) {
-				
-			//count++;
-			System.out.println("result1"+element.getText().toString());
-		}
-		}
-//		if(count==values.length) {
-//			return true;
-//		}
-		}
-		return false;
-	}
-	public boolean verifyErrorMSg2(List<WebElement> elements, String value) {
-		if(value!="") {
-		for (WebElement element : elements) {
-			System.out.println("result:"+element.getText().toString());
-			if (element.getText().equalsIgnoreCase(value)){
+		String[] values = value.split(",");
+		int count = 0;
+		System.out.println(values.length);
+
+		for (int j = 0; j < values.length; j++) {
+
+			String excelMessage = values[j].toString().trim();
+			System.out.println("excel : " + excelMessage);
+			Iterator<WebElement> i = elements.iterator();
+			while (i.hasNext()) {
+				WebElement webelemen = i.next();
+				String data = webelemen.getText().trim();
+				if (data.equalsIgnoreCase(excelMessage)) {
+					count++;
+					System.out.println("actual: " + data);
+				}
+			}
+			if (count == values.length) {
 				return true;
 			}
+
 		}
+		System.out.println("");
+		return false;
+
+	}
+
+	public void scrollDown() {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,250)", "");
+	}
+
+	public boolean verifyErrorMSg2(List<WebElement> elements, String value) {
+		if (value != "") {
+			for (WebElement element : elements) {
+				System.out.println("result:" + element.getText().toString());
+				if (element.getText().equalsIgnoreCase(value)) {
+					return true;
+				}
+			}
 		}
 		return false;
 	}
@@ -137,6 +151,7 @@ public class Webutilities extends BaseClass {
 			element.click();
 		}
 	}
+
 	public boolean Isdisplayed(WebElement element) throws InterruptedException {
 		try {
 			if (element.isDisplayed()) {
@@ -145,7 +160,7 @@ public class Webutilities extends BaseClass {
 		} catch (Exception e) {
 			Thread.sleep(1000);
 			e.printStackTrace();
-			
+
 		}
 		return false;
 	}
@@ -155,7 +170,8 @@ public class Webutilities extends BaseClass {
 			if (element.isDisplayed()
 					&& element.getAttribute("class").trim().equalsIgnoreCase("checkboxCustom checkedCustom")) {
 				return true;
-			} else if (element.isDisplayed() && element.getAttribute("class").trim().equalsIgnoreCase("checkboxCustom")) {
+			} else if (element.isDisplayed()
+					&& element.getAttribute("class").trim().equalsIgnoreCase("checkboxCustom")) {
 				return false;
 			}
 		} catch (NoSuchElementException n) {
@@ -178,18 +194,18 @@ public class Webutilities extends BaseClass {
 	}
 
 	public void selectByVisibleText(WebElement element, String text) {
-try { 
-	if(text!=""&&element.isDisplayed()) {
-		Select select = new Select(element);
-		select.selectByVisibleText(text);
+		try {
+			if (text != "" && element.isDisplayed()) {
+				Select select = new Select(element);
+				select.selectByVisibleText(text);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-	}catch (Exception e) {
-		e.printStackTrace();
-	}
 	}
 
 	public boolean verifyFieldValue(WebElement element) {
-		if(element.getAttribute("value").equalsIgnoreCase("")) {
+		if (element.getAttribute("value").equalsIgnoreCase("")) {
 			return true;
 		}
 		return false;
@@ -238,34 +254,36 @@ try {
 		}
 		Reporter.log("No such kind of Advertiser" + value);
 	}
-	
+
 	public void selectingClient2(List<WebElement> elements, String value) {
 		for (int i = 0; i < elements.size(); i++) {
 			try {
 				if (elements.get(i).getText().equalsIgnoreCase(value)) {
-					//String status=elements2.get(i).getAttribute("title");
+					// String status=elements2.get(i).getAttribute("title");
 					System.out.println("user existed in list");
 					break;
-					}
-			} catch (Exception e) {System.out.println("no such kind of user");
-				e.printStackTrace();	
-			}
-					}	
-				Reporter.log("No such kind of Advertiser" + value);
 				}
-	public void selectingclient3(List<WebElement> elements, String value, List<WebElement> elements2) {
-		// TODO Auto-generated method stub
-		for (int i = 0; i < elements.size(); i++) {
-			
-			if (elements.get(i).getText().equalsIgnoreCase(value)) {
-				String status=elements2.get(i).getText();
-				if(status.equalsIgnoreCase("Read-only")) {
-					System.out.println("user status have read only");
-				}
-				System.out.println("user in list but status different as"+status);
+			} catch (Exception e) {
+				System.out.println("no such kind of user");
+				e.printStackTrace();
 			}
 		}
 		Reporter.log("No such kind of Advertiser" + value);
 	}
-	
+
+	public void selectingclient3(List<WebElement> elements, String value, List<WebElement> elements2) {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < elements.size(); i++) {
+
+			if (elements.get(i).getText().equalsIgnoreCase(value)) {
+				String status = elements2.get(i).getText();
+				if (status.equalsIgnoreCase("Read-only")) {
+					System.out.println("user status have read only");
+				}
+				System.out.println("user in list but status different as" + status);
+			}
+		}
+		Reporter.log("No such kind of Advertiser" + value);
 	}
+
+}

@@ -2,6 +2,8 @@ package com.Vizibl.Testcases;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
+
+import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
@@ -20,6 +22,7 @@ public class Registration extends BaseClass {
 
 	@BeforeClass
 	public void initiate() throws MalformedURLException, InterruptedException {
+		
 		getbrowser();
 		webutils.waitUntilVisibile(mainpageObjects.getRegister_Link());
 		webutils.click(mainpageObjects.getRegister_Link());
@@ -27,14 +30,15 @@ public class Registration extends BaseClass {
 	}
 
 	@Test(dataProvider = "advertiserRegistration", dataProviderClass = Registration.class, priority = 1)
+
 	public void advertiserRegistration(String ClientType, String orgName, String firstName, String lastName,
 			String email_id, String password, String password_confirmation, String contact_num, String website,
 			String address_line1, String address_line2, String country, String state, String city, String pincode,
 			String action, String Expected) throws Exception {
 		try {
-			
 			webutils.waitForPageToLoad();
 			webutils.selectByVisibleText(registrationObjects.getClientType(), ClientType);
+			webutils.waitUntilVisibile(registrationObjects.getOrganizationName());
 			webutils.sendkeys(registrationObjects.getOrganizationName(), orgName);
 			webutils.sendkeys(registrationObjects.getFirstName(), firstName);
 			webutils.sendkeys(registrationObjects.getLastName(), lastName);
@@ -49,48 +53,39 @@ public class Registration extends BaseClass {
 			webutils.sendkeys(registrationObjects.getState(), state);
 			webutils.sendkeys(registrationObjects.getCity(), city);
 			webutils.sendkeys(registrationObjects.getPincode(), pincode);
-			if (action.trim().equalsIgnoreCase("cancel")) {
-			webutils.click(registrationObjects.getCancel_button());
-			webutils.waitUntilVisibile(mainpageObjects.getRegister_Link());
-			webutils.click(mainpageObjects.getRegister_Link());
-			}
-			else {
-				webutils.click(registrationObjects.getRegister());
-				Assert.assertTrue(webutils.verifyErrorMSg(registrationObjects.getErrorMessages(), Expected));
-				
-			}
-			
-			/*if (action.trim().equalsIgnoreCase("cancel")) {
-				Assert.assertTrue(webutils.verifyErrorMSg(registrationObjects.getErrorMessages(), Expected));
-				webutils.sleep();
+			if (action.equalsIgnoreCase("cancel")) {
+				try {
+					webutils.scrollDown();
+					actions.sendKeys(Keys.TAB).build().perform();
+					Assert.assertTrue(webutils.verifyErrorMSg(registrationObjects.getErrorMessages(), Expected));
+					webutils.waitUntilVisibile(registrationObjects.getCancel_button());
+					webutils.click(registrationObjects.getCancel_button());
+					webutils.waitUntilVisibile(mainpageObjects.getRegister_Link());
+					webutils.click(mainpageObjects.getRegister_Link());
+				} catch (Exception e) {
+					actions.sendKeys(Keys.ESCAPE).build().perform();
+					webutils.waitUntilVisibile(mainpageObjects.getRegister_Link());
+					webutils.click(mainpageObjects.getRegister_Link());
+				}
+			} else if (action.equalsIgnoreCase("submit")) {
+				try {
+					webutils.scrollDown();
+					actions.sendKeys(Keys.TAB).build().perform();
+					webutils.click(registrationObjects.getRegister());
+					Assert.assertTrue(webutils.verifyErrorMSg(registrationObjects.getErrorMessages(), Expected));
+					webutils.AlertHandling();
+				} catch (Exception e) {
+					Assert.assertTrue(webutils.verifyErrorMSg(registrationObjects.getErrorMessages(), Expected));
+					actions.sendKeys(Keys.ESCAPE).build().perform();
+					webutils.waitUntilVisibile(mainpageObjects.getRegister_Link());
+					webutils.click(mainpageObjects.getRegister_Link());
+				}
+			}else if (action.equalsIgnoreCase(" ")) {
 				webutils.click(registrationObjects.getCancel_button());
-				webutils.waitUntilVisibile(registrationObjects.getCancel_button());
-				webutils.click(registrationObjects.getCancel_button());
-				webutils.waitUntilVisibile(mainpageObjects.getRegister_Link());
-				webutils.click(mainpageObjects.getRegister_Link());
-			} else if (action.trim().equalsIgnoreCase("submit")) {
-				 	try {	webutils.Isdisplayed(registrationObjects.getRegister())
-					
-						webutils.click(registrationObjects.getRegister());
-				
-						Assert.assertTrue(webutils.verifyErrorMSg(registrationObjects.getErrorMessages(), Expected));
-				
-				}*/
-				 	
-				 	
-//				webutils.waitUntilVisibile(registrationObjects.getCancel_button());
-//				webutils.sleep();
-//				if (webutils.Isdisplayed(registrationObjects.getCancel_button())) {
-//
-//					webutils.click(registrationObjects.getCancel_button());
-//				} else {
-//					Assert.assertTrue(webutils.verifyErrorMSg(registrationObjects.getErrorMessages(), Expected));
-//					webutils.waitUntilVisibile(registrationObjects.getCancel_button());
-//				}
-			
+			} 
+
 		} catch (Exception e) {
-//				throw new Exception(e.getMessage());
-				e.printStackTrace();
+			throw new Exception(e.getMessage());
 		}
 	}
 
