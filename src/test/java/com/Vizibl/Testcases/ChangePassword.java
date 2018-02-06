@@ -2,6 +2,8 @@ package com.Vizibl.Testcases;
 
 import static org.testng.Assert.assertEquals;
 import java.io.IOException;
+
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -22,9 +24,8 @@ public class ChangePassword extends BaseClass {
 		webutils.waitForPageToLoad();
 		actions.moveToElement(homepageObjectes.getProfileName()).perform();
 		assertEquals(changepasswordObjects.getChangePassword().getText(), "Change Password");
-		// verfing change password button existed or not//
 		actions.doubleClick(changepasswordObjects.getChangePassword()).perform();
-		// clicking on change password //
+	
 	}
 
 	@Test(dataProvider = "ChangePassword")
@@ -35,15 +36,11 @@ public class ChangePassword extends BaseClass {
 			
 			webutils.waitUntilVisibile(changepasswordObjects.getCurrent_password());
 			webutils.sendkeys(changepasswordObjects.getCurrent_password(), currentPassword);
-		
-			webutils.sendkeys(changepasswordObjects.getNew_Password(), newPassword);
-		
+			webutils.sendkeys(changepasswordObjects.getNew_Password(), newPassword);		
 			webutils.sendkeys(changepasswordObjects.getConfirmation_Password(), confirmPassword);
-
 			webutils.click(changepasswordObjects.getSaveChanges());
-			
 			webutils.sleep();
-			//Assert.assertTrue(webutils.verifyErrorMSg(changepasswordObjects.getErrorMessages(), expectedResult));
+			Assert.assertTrue(webutils.verifyErrorMSg(changepasswordObjects.getErrorMessages(), expectedResult));
 		} catch (Exception e) {
 	
 			e.printStackTrace();

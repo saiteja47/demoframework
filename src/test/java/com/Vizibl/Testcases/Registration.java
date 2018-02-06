@@ -1,5 +1,7 @@
 package com.Vizibl.Testcases;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 
@@ -22,8 +24,9 @@ public class Registration extends BaseClass {
 
 	@BeforeClass
 	public void initiate() throws MalformedURLException, InterruptedException {
-		
+
 		getbrowser();
+		webutils.waitForPageToLoad();
 		webutils.waitUntilVisibile(mainpageObjects.getRegister_Link());
 		webutils.click(mainpageObjects.getRegister_Link());
 
@@ -68,21 +71,24 @@ public class Registration extends BaseClass {
 					webutils.click(mainpageObjects.getRegister_Link());
 				}
 			} else if (action.equalsIgnoreCase("submit")) {
+
+				webutils.scrollDown();
+				actions.sendKeys(Keys.TAB).build().perform();
 				try {
-					webutils.scrollDown();
-					actions.sendKeys(Keys.TAB).build().perform();
 					webutils.click(registrationObjects.getRegister());
-					Assert.assertTrue(webutils.verifyErrorMSg(registrationObjects.getErrorMessages(), Expected));
-					webutils.AlertHandling();
+					webutils.waitUntilVisibile(commonObjects.getAdvertiser_Tiitle());
+					assertEquals("Advertisers", commonObjects.getAdvertiser_Tiitle());
+
 				} catch (Exception e) {
+
 					Assert.assertTrue(webutils.verifyErrorMSg(registrationObjects.getErrorMessages(), Expected));
 					actions.sendKeys(Keys.ESCAPE).build().perform();
 					webutils.waitUntilVisibile(mainpageObjects.getRegister_Link());
 					webutils.click(mainpageObjects.getRegister_Link());
 				}
-			}else if (action.equalsIgnoreCase(" ")) {
+			} else if (action.equalsIgnoreCase(" ")) {
 				webutils.click(registrationObjects.getCancel_button());
-			} 
+			}
 
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
@@ -115,7 +121,7 @@ public class Registration extends BaseClass {
 	@Test(priority = 3)
 	public void verfyingUserAccountInAdvertisers() throws Exception {
 		/* checking user account in advertisers list */
-		// webutils.login();
+		webutils.login();
 		webutils.waitUntilVisibile(commonObjects.getMenu_Left());
 		webutils.click(commonObjects.getMenu_Left(), "Advertiser");
 		webutils.selectByVisibleText(advertiserPageObjects.getRecordpPerPage(), VariableData.pageRecords);
@@ -123,11 +129,6 @@ public class Registration extends BaseClass {
 				advertiserPageObjects.getAdvertiserStatusList());
 		Reporter.log("Uesr is existing in Advertiser ");
 		System.out.println("test case passed");
-	}
-
-	@Test(priority = 4)
-	public void mailconformation() {
-
 	}
 
 	@AfterClass
@@ -139,9 +140,7 @@ public class Registration extends BaseClass {
 	public static Object[][] advertiserRegistration() throws IOException {
 		Excelconfig config = new Excelconfig();
 		int totalrows = config.getRowcount(3);
-		// System.out.println(totalrows);
 		int totalcolumns = config.getColumnCount("advertiserRegistration", 1);
-		// System.out.println(totalcolumns);
 		Object[][] data = new Object[totalrows - 1][totalcolumns - 5];
 		for (int i = 1; i < totalrows; i++) {
 			for (int j = 5; j < totalcolumns; j++) {

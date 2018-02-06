@@ -14,7 +14,7 @@ public class LoginpageObjects
 		PageFactory.initElements(driver, this);
 	}
   
-	@FindBys({ @FindBy(xpath = "//div[@class='input-icon' or @class='portlet-body']/abcd") })
+	@FindBys({ @FindBy(xpath = "//abcd[@style='color: red']") })
 	private List<WebElement> errorMessages;
 	
 	public  List<WebElement> getErrorMessages() {

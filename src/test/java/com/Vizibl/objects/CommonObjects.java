@@ -86,7 +86,7 @@ private WebElement demoAccount_button;
 		return passwordNext;
 	}
 	//menu iteams//
-	@FindBy(xpath="//[@title='Advertisers ']")
+	@FindBy(xpath="//h3[@class='page-title']")
 	private WebElement advertiser_Tiitle;
 
 

@@ -15,15 +15,24 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.Reporter;
 
 public class Webutilities extends BaseClass {
+
+	public String getattribute(WebElement element, String value) {
+		String data = element.getAttribute(value);
+		System.out.println(data);
+		return data;
+	}
 
 	public void sleep() throws InterruptedException {
 		Thread.sleep(3000);
 	}
 
 	public void navigate(String url) {
+		String a = "window.open('about:blank','_blank');";
+		((JavascriptExecutor) driver).executeScript(a);
 		driver.navigate().to(url);
 	}
 
@@ -38,7 +47,7 @@ public class Webutilities extends BaseClass {
 
 	public String gettext(WebElement element) {
 		element.isDisplayed();
-		String text = element.getText();
+		String text = element.getText().trim();
 		return text;
 
 	}
@@ -51,17 +60,21 @@ public class Webutilities extends BaseClass {
 
 	}
 
-	public void newWindow() {
-		actions.sendKeys(Keys.chord(Keys.CONTROL, "T")).perform();
+		public void window() throws InterruptedException {
+
 		Set<String> śet = driver.getWindowHandles();
 		Iterator<String> it = śet.iterator();
 		String parentWindID = it.next();
-		String chaildWindowID = it.next();
-		driver.switchTo().window(chaildWindowID);
+		String a = "window.open('http://viziblbeta.datawrkz.com/','_blank');";
+		((JavascriptExecutor) driver).executeScript(a);
+		String data = gettext(commonObjects.getAdvertiser_Tiitle());
+		Assert.assertEquals("Advertisers", data);
+		driver.switchTo().window(parentWindID);
+		System.out.println("exeuted");
 	}
 
 	public void login() throws Exception {
-		boolean result = false;
+		// boolean result = false;
 		try {
 			click(mainpageObjects.getLogin_button());
 			waitUntilVisibile(loginpageObjects.getUserName());
@@ -70,7 +83,7 @@ public class Webutilities extends BaseClass {
 			click(loginpageObjects.getRememberme_check());
 			click(loginpageObjects.getSignIn_button());
 			sleep();
-			result = true;
+			// result = true;
 		} catch (Throwable t) {
 			throw new Exception(t.getMessage());
 
@@ -175,7 +188,7 @@ public class Webutilities extends BaseClass {
 				return false;
 			}
 		} catch (NoSuchElementException n) {
-
+			n.printStackTrace();
 		}
 		return false;
 	}
@@ -210,20 +223,6 @@ public class Webutilities extends BaseClass {
 		}
 		return false;
 	}
-	// public boolean isDisplayed(WebElement element) {
-	// try{
-	// if(element.isDisplayed()) {
-	// return true;
-	// }
-	// return false;
-	// }
-	//
-	// catch (Exception e) {
-	// e.printStackTrace();
-	// }
-	// return false;
-	//
-	// }
 
 	public void refresh() {
 		driver.navigate().refresh();
@@ -231,28 +230,37 @@ public class Webutilities extends BaseClass {
 
 	public void click(List<WebElement> elements, String value) {
 
-		for (WebElement element : elements) {
-			if (element.getAttribute("title").equalsIgnoreCase(value)) {
-				element.click();
+		try {
+			for (WebElement element : elements) {
+				if (element.getAttribute("title").equalsIgnoreCase(value)) {
+					element.click();
+				}
 			}
+			Reporter.log("No such kind of mails" + value);
+		} catch (Exception e) {
 
+			e.printStackTrace();
 		}
-		Reporter.log("No such kind of mails" + value);
 
 	}
 
 	public void selectingClient(List<WebElement> elements, String value, List<WebElement> elements2) {
-		// TODO Auto-generated method stub
-		for (int i = 0; i < elements.size(); i++) {
-			System.out.println(elements.get(i).getText());
-			if (elements.get(i).getText().equalsIgnoreCase(value)) {
 
-				elements2.get(i).click();
-				System.out.println(i);
-				break;
+		try {
+			for (int i = 0; i < elements.size(); i++) {
+				System.out.println(elements.get(i).getText());
+				if (elements.get(i).getText().equalsIgnoreCase(value)) {
+
+					elements2.get(i).click();
+					System.out.println(i);
+					break;
+				}
 			}
+			Reporter.log("No such kind of Advertiser" + value);
+		} catch (Exception e) {
+
+			e.printStackTrace();
 		}
-		Reporter.log("No such kind of Advertiser" + value);
 	}
 
 	public void selectingClient2(List<WebElement> elements, String value) {
@@ -272,7 +280,7 @@ public class Webutilities extends BaseClass {
 	}
 
 	public void selectingclient3(List<WebElement> elements, String value, List<WebElement> elements2) {
-		// TODO Auto-generated method stub
+
 		for (int i = 0; i < elements.size(); i++) {
 
 			if (elements.get(i).getText().equalsIgnoreCase(value)) {
@@ -286,4 +294,12 @@ public class Webutilities extends BaseClass {
 		Reporter.log("No such kind of Advertiser" + value);
 	}
 
+	/*
+	 * public boolean isDisplayed(WebElement element) { try{
+	 * if(element.isDisplayed()) { return true; } return false; }
+	 * 
+	 * catch (Exception e) { e.printStackTrace(); } return false;
+	 * 
+	 * }
+	 */
 }
