@@ -95,7 +95,7 @@ public class Registration extends BaseClass {
 		}
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2)//independent//
 	public void verfyingUserAccountInDemoAccounts() throws Exception {
 		/* verfying user account in Demo accounts */
 		try {
@@ -149,5 +149,6 @@ public class Registration extends BaseClass {
 		}
 		return data;
 	}
+	
 
 }

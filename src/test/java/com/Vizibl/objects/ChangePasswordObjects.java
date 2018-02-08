@@ -63,11 +63,24 @@ public class ChangePasswordObjects {
 	@FindBy(xpath = "//button[@class='close'] ")
 	private WebElement close;
 
-	@FindBys({ @FindBy(xpath = "//abcd[@style='color: red']") })
+	@FindBys({ @FindBy(xpath = ".//*[@id='changepasswordhere']/div/div/div") })
 	private List<WebElement> errorMessages;
 	
 	public  List<WebElement> getErrorMessages() {
 		return errorMessages;
+	}
+	
+	@FindBy(xpath=".//*[@id='warning1']/abcd")
+	private WebElement currentPassworderrormsg;
+
+	public WebElement getCurrentPassworderrormsg() {
+		return currentPassworderrormsg;
+	}
+	@FindBy(xpath="//div[@id='notice']")
+	private WebElement successfulMsg;
+
+	public WebElement getSuccessfulMsg() {
+		return successfulMsg;
 	}
 
 }

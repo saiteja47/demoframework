@@ -25,49 +25,79 @@ public class ChangePassword extends BaseClass {
 		actions.moveToElement(homepageObjectes.getProfileName()).perform();
 		assertEquals(changepasswordObjects.getChangePassword().getText(), "Change Password");
 		actions.doubleClick(changepasswordObjects.getChangePassword()).perform();
-	
+
 	}
 
 	@Test(dataProvider = "ChangePassword")
 	public void changePassword(String currentPassword, String newPassword, String confirmPassword,
 			String expectedResult) throws InterruptedException {
 
+		webutils.waitUntilVisibile(changepasswordObjects.getCurrent_password());
+		webutils.sendkeys(changepasswordObjects.getCurrent_password(), currentPassword);
+		webutils.sendkeys(changepasswordObjects.getNew_Password(), newPassword);
+		webutils.sendkeys(changepasswordObjects.getConfirmation_Password(), confirmPassword);
 		try {
-			
-			webutils.waitUntilVisibile(changepasswordObjects.getCurrent_password());
-			webutils.sendkeys(changepasswordObjects.getCurrent_password(), currentPassword);
-			webutils.sendkeys(changepasswordObjects.getNew_Password(), newPassword);		
-			webutils.sendkeys(changepasswordObjects.getConfirmation_Password(), confirmPassword);
 			webutils.click(changepasswordObjects.getSaveChanges());
 			webutils.sleep();
+			webutils.waitUntilVisibile(changepasswordObjects.getCurrentPassworderrormsg());
 			Assert.assertTrue(webutils.verifyErrorMSg(changepasswordObjects.getErrorMessages(), expectedResult));
-		} catch (Exception e) {
-	
-			e.printStackTrace();
+		}
+
+		catch (Exception e) {
+
+			Assert.assertTrue(webutils.verifyErrorMSg(changepasswordObjects.getErrorMessages(), expectedResult));
 		}
 	}
-	@Test
-	public void validChangePassword() {
-	
+
+	@Test(dataProvider = "validChangePassword")
+	public void validChangePassword(String currentPassword, String newPassword, String confirmPassword)
+			throws Exception {
+
+		webutils.waitUntilVisibile(changepasswordObjects.getCurrent_password());
+		webutils.sendkeys(changepasswordObjects.getCurrent_password(), currentPassword);
+		webutils.sendkeys(changepasswordObjects.getNew_Password(), newPassword);
+		webutils.sendkeys(changepasswordObjects.getConfirmation_Password(), confirmPassword);
+		webutils.click(changepasswordObjects.getSaveChanges());
+		webutils.waitUntilVisibile(changepasswordObjects.getSuccessfulMsg());
+		
+		assertEquals(webutils.gettext(changepasswordObjects.getSuccessfulMsg()), 
+				"Password changed successfully...!!!");
 		
 	}
-	@AfterClass
-	public void afterClass() throws Exception {
-		webutils.logOut();
-		webutils.quit();
-	}
+
+	// @AfterClass
+	// public void afterClass() throws Exception {
+	// webutils.logOut();
+	// webutils.quit();
+	// }
 
 	@DataProvider(name = "ChangePassword")
 	public static Object[][] Changepassword() throws IOException {
 		Excelconfig config = new Excelconfig();
 		int totalrows = config.getRowcount(2);
-		 System.out.println(totalrows);
+		System.out.println(totalrows);
 		int totalcolumns = config.getColumnCount("ChangePassword", 1);
-		 System.out.println(totalcolumns);
-		Object[][] data = new Object[totalrows - 1][totalcolumns - 5];
-		for (int i = 1; i < totalrows; i++) {
+		System.out.println(totalcolumns);
+		Object[][] data = new Object[totalrows - 3][totalcolumns - 5];
+		for (int i = 1; i < totalrows - 2; i++) {
 			for (int j = 5; j < totalcolumns; j++) {
 				data[i - 1][j - 5] = config.GetCellData(2, i, j);
+			}
+		}
+		return data;
+	}
+
+	@DataProvider(name = "validChangePassword")
+	public static Object[][] validChangePassword() throws IOException {
+		Excelconfig config = new Excelconfig();
+		int totalrows = config.getRowcount(2);
+		System.out.println(totalrows);
+		int totalcolumns = config.getColumnCount("ChangePassword", 7);
+		System.out.println(totalcolumns);
+		Object[][] data = new Object[totalrows - 7][totalcolumns - 6];
+		for (int i = 7; i < totalrows; i++) {
+			for (int j = 5; j < totalcolumns - 1; j++) {
+				data[i - 7][j - 5] = config.GetCellData(2, i, j);
 			}
 		}
 		return data;

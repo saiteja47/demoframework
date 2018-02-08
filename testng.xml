@@ -3,10 +3,12 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="ViziblAdmin.Testcases.ForgetPassword"/>
-      <class name="ViziblAdmin.Testcases.Registration"/>
-      <class name="ViziblAdmin.Testcases.ChangePassword"/>
-      <class name="ViziblAdmin.Testcases.LoginPage"/>
+      <class name="com.Vizibl.Testcases.ForgetPassword"/>
+      <class name="com.Vizibl.Testcases.CreateAdvertiser"/>
+      <class name="com.Vizibl.Testcases.LoginPage"/>
+      <class name="com.Vizibl.Testcases.ForgetPassword_AfterChangingPassword"/>
+      <class name="com.Vizibl.Testcases.ChangePassword"/>
+      <class name="com.Vizibl.Testcases.Registration"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

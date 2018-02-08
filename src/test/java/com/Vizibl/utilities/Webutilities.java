@@ -60,7 +60,7 @@ public class Webutilities extends BaseClass {
 
 	}
 
-		public void window() throws InterruptedException {
+	public void window() throws InterruptedException {
 
 		Set<String> śet = driver.getWindowHandles();
 		Iterator<String> it = śet.iterator();
@@ -101,18 +101,18 @@ public class Webutilities extends BaseClass {
 	}
 
 	public boolean verifyErrorMSg(List<WebElement> elements, String value) {
-		String[] values = value.split(",");
+		String[] values = value.split(";");
 		int count = 0;
+
 		System.out.println(values.length);
-
 		for (int j = 0; j < values.length; j++) {
-
 			String excelMessage = values[j].toString().trim();
 			System.out.println("excel : " + excelMessage);
 			Iterator<WebElement> i = elements.iterator();
 			while (i.hasNext()) {
 				WebElement webelemen = i.next();
 				String data = webelemen.getText().trim();
+
 				if (data.equalsIgnoreCase(excelMessage)) {
 					count++;
 					System.out.println("actual: " + data);
@@ -121,7 +121,6 @@ public class Webutilities extends BaseClass {
 			if (count == values.length) {
 				return true;
 			}
-
 		}
 		System.out.println("");
 		return false;
@@ -215,6 +214,25 @@ public class Webutilities extends BaseClass {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void chekingAllOptionsInDropedown(WebElement element, String value) {
+		Select select = new Select(element);
+		List<WebElement> lstoptions = select.getOptions();
+		String[] values = value.split(";");
+		System.out.println(values.length);
+		for (int j = 0; j < values.length; j++) {
+			String Excelldata = values[j].toString().trim();
+			System.out.println(lstoptions.size());
+			for (int i = 0; i < lstoptions.size(); i++) {
+				String actual = lstoptions.get(i).getText();
+				if (actual.equalsIgnoreCase(Excelldata)) {
+					System.out.println(actual);
+					break;
+				}
+			}
+		}
+
 	}
 
 	public boolean verifyFieldValue(WebElement element) {
