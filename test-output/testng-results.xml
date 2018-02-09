@@ -1,31 +1,570 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="2" total="6" passed="4">
   <reporter-output>
     <line>
-      <![CDATA[Verfied the Title of the Vizibl page]]>
+      <![CDATA[No such kind of mailsAdvertiser]]>
+    </line>
+    <line>
+      <![CDATA[No such kind of AdvertiserDecibel]]>
+    </line>
+    <line>
+      <![CDATA[Uesr is existing in Advertiser ]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18933" started-at="2018-02-06T11:24:02Z" finished-at="2018-02-06T11:24:21Z">
+  <suite name="Default suite" duration-ms="123420" started-at="2018-02-09T07:27:05Z" finished-at="2018-02-09T07:29:09Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18933" started-at="2018-02-06T11:24:02Z" finished-at="2018-02-06T11:24:21Z">
-      <class name="com.Vizibl.Testcases.LoginPage">
-        <test-method status="PASS" signature="initiate()[pri:0, instance:com.Vizibl.Testcases.LoginPage@551aa95a]" name="initiate" is-config="true" duration-ms="11989" started-at="2018-02-06T16:54:02Z" finished-at="2018-02-06T16:54:14Z">
+    <test name="Default test" duration-ms="123420" started-at="2018-02-09T07:27:05Z" finished-at="2018-02-09T07:29:09Z">
+      <class name="com.Vizibl.Testcases.Registration">
+        <test-method status="PASS" signature="initiate()[pri:0, instance:com.Vizibl.Testcases.Registration@1f36e637]" name="initiate" is-config="true" duration-ms="12355" started-at="2018-02-09T12:57:05Z" finished-at="2018-02-09T12:57:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initiate -->
-        <test-method status="PASS" signature="rememberMe()[pri:0, instance:com.Vizibl.Testcases.LoginPage@551aa95a]" name="rememberMe" duration-ms="6905" started-at="2018-02-06T16:54:14Z" finished-at="2018-02-06T16:54:21Z">
+        <test-method status="FAIL" signature="advertiserRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.Registration@1f36e637]" name="advertiserRegistration" duration-ms="36360" started-at="2018-02-09T12:57:20Z" data-provider="advertiserRegistration" finished-at="2018-02-09T12:57:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Select Client Type *]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Select Country *]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[submit]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Client Type can not be blank; Organization Name cant be blank; First Name can't be blank; Last Name cant be blank; Email Id can't be blank; Password cant be blank; Confirm Password can't be blank; Contact Number can't be blank; Website can't be blank; Address can't be blank; Country Name can't be blank; State Name can't be blank; City Name can't be blank; Pincode Number can't be blank;]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.Vizibl.Testcases.Registration.advertiserRegistration(Registration.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- advertiserRegistration -->
+        <test-method status="PASS" signature="advertiserRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.Registration@1f36e637]" name="advertiserRegistration" duration-ms="11428" started-at="2018-02-09T12:57:57Z" data-provider="advertiserRegistration" finished-at="2018-02-09T12:58:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Agency]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Organiz]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Data]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[wrkz]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[s.rinivasaraor5945gmail.com]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Datawrkz1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Datawrkz12]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[9876543]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[www.#.com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[1234#1]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[karantaka]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[523]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[cancel]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Email id is invalid; Confirm Password is not same as Password; Website is invalid;]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- advertiserRegistration -->
+        <test-method status="FAIL" signature="advertiserRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.Registration@1f36e637]" name="advertiserRegistration" duration-ms="11741" started-at="2018-02-09T12:58:08Z" data-provider="advertiserRegistration" finished-at="2018-02-09T12:58:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Advertiser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[My Organization]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Data]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[wrkz]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[s.rinivasaraor5945@gmailcom]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Datawrkz1$]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Datawrkz1]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[98765432101234567]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[#ba.com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[HSR Layout]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[karantaka]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[52300812345678901]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[submit]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Email id is invalid, Special Charater Not allowed; Confirm Password is not same as Password; Contact Number length should be less than 16; Website is invalid; Pincode Number can't be greater than 16;]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.Vizibl.Testcases.Registration.advertiserRegistration(Registration.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- advertiserRegistration -->
+        <test-method status="PASS" signature="advertiserRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.Registration@1f36e637]" name="advertiserRegistration" duration-ms="9316" started-at="2018-02-09T12:58:20Z" data-provider="advertiserRegistration" finished-at="2018-02-09T12:58:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Agency]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[My Organization]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Data]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[wrkz]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[srinivasaraor5945@gmail.com]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Da1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Datawrkz1]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[srinvasarao]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[www.#com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[HSR Layout123]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[karantaka]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[523009]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[cancel]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[ Password length should be Greater than 8; Confirm Password is not same as Password; Contact Number Invalid; Website is invalid;]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- advertiserRegistration -->
+        <test-method status="PASS" signature="advertiserRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.Registration@1f36e637]" name="advertiserRegistration" duration-ms="6385" started-at="2018-02-09T12:58:29Z" data-provider="advertiserRegistration" finished-at="2018-02-09T12:58:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Advertiser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[My Organization]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Data]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[wrkz]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[s.rinivasaraor5945@gmail.com]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Datawrkz1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Datawrkz1]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[9876543211]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[www.cba.com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[HSR Layout]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[karantaka]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Bangalore]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[523010]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- advertiserRegistration -->
+        <test-method status="PASS" signature="verfyingUserAccountInAdvertisers()[pri:0, instance:com.Vizibl.Testcases.Registration@1f36e637]" name="verfyingUserAccountInAdvertisers" duration-ms="32990" started-at="2018-02-09T12:58:36Z" finished-at="2018-02-09T12:59:09Z">
           <reporter-output>
             <line>
-              <![CDATA[Verfied the Title of the Vizibl page]]>
+              <![CDATA[No such kind of mailsAdvertiser]]>
+            </line>
+            <line>
+              <![CDATA[No such kind of AdvertiserDecibel]]>
+            </line>
+            <line>
+              <![CDATA[Uesr is existing in Advertiser ]]>
             </line>
           </reporter-output>
-        </test-method> <!-- rememberMe -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.Vizibl.Testcases.LoginPage@551aa95a]" name="afterClass" is-config="true" duration-ms="1" started-at="2018-02-06T16:54:21Z" finished-at="2018-02-06T16:54:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- com.Vizibl.Testcases.LoginPage -->
+        </test-method> <!-- verfyingUserAccountInAdvertisers -->
+      </class> <!-- com.Vizibl.Testcases.Registration -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

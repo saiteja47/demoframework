@@ -3,31 +3,38 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="ViziblAdmin.Testcases.ForgetPassword">
+      <class name="com.Vizibl.Testcases.LoginPage">
+        <methods>
+          <include name="initiate"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.Vizibl.Testcases.LoginPage -->
+      <class name="com.Vizibl.Testcases.ForgetPassword">
+        <methods>
+          <include name="forgotPassword" invocation-numbers="3"/>
+          <include name="initiate"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.Vizibl.Testcases.ForgetPassword -->
+      <class name="com.Vizibl.Testcases.ForgetPassword_AfterChangingPassword">
+        <methods>
+          <include name="initiate"/>
+        </methods>
+      </class> <!-- com.Vizibl.Testcases.ForgetPassword_AfterChangingPassword -->
+      <class name="com.Vizibl.Testcases.ChangePassword">
         <methods>
           <include name="afterClass"/>
           <include name="initiate"/>
         </methods>
-      </class> <!-- ViziblAdmin.Testcases.ForgetPassword -->
-      <class name="ViziblAdmin.Testcases.Registration">
+      </class> <!-- com.Vizibl.Testcases.ChangePassword -->
+      <class name="com.Vizibl.Testcases.Registration">
         <methods>
-          <include name="initiate"/>
-          <include name="advertiserRegistration" invocation-numbers="0"/>
-          <include name="afterClass"/>
-        </methods>
-      </class> <!-- ViziblAdmin.Testcases.Registration -->
-      <class name="ViziblAdmin.Testcases.ChangePassword">
-        <methods>
+          <include name="verfyingUserAccountInAdvertisers"/>
+          <include name="advertiserRegistration" invocation-numbers="0 2 3 4"/>
           <include name="afterClass"/>
           <include name="initiate"/>
         </methods>
-      </class> <!-- ViziblAdmin.Testcases.ChangePassword -->
-      <class name="ViziblAdmin.Testcases.LoginPage">
-        <methods>
-          <include name="afterClass"/>
-          <include name="initiate"/>
-        </methods>
-      </class> <!-- ViziblAdmin.Testcases.LoginPage -->
+      </class> <!-- com.Vizibl.Testcases.Registration -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
