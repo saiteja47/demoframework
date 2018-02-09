@@ -43,7 +43,7 @@ public class LoginPage extends BaseClass {
 		}
 	}
 
-	@Test()
+	@Test(priority=2)
 	public void rememberMe() throws Exception {
 		try {
 

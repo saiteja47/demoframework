@@ -49,27 +49,40 @@ public class ChangePassword extends BaseClass {
 		}
 	}
 
-	@Test(dataProvider = "validChangePassword")
+	@Test(dataProvider = "validChangePassword", dependsOnMethods="changePassword" )
 	public void validChangePassword(String currentPassword, String newPassword, String confirmPassword)
 			throws Exception {
 
-		webutils.waitUntilVisibile(changepasswordObjects.getCurrent_password());
-		webutils.sendkeys(changepasswordObjects.getCurrent_password(), currentPassword);
-		webutils.sendkeys(changepasswordObjects.getNew_Password(), newPassword);
-		webutils.sendkeys(changepasswordObjects.getConfirmation_Password(), confirmPassword);
-		webutils.click(changepasswordObjects.getSaveChanges());
-		webutils.waitUntilVisibile(changepasswordObjects.getSuccessfulMsg());
+		try {
+			webutils.waitUntilVisibile(changepasswordObjects.getCurrent_password());
+			webutils.sendkeys(changepasswordObjects.getCurrent_password(), currentPassword);
+			webutils.sendkeys(changepasswordObjects.getNew_Password(), newPassword);
+			webutils.sendkeys(changepasswordObjects.getConfirmation_Password(), confirmPassword);
+			webutils.click(changepasswordObjects.getSaveChanges());
+			webutils.waitUntilVisibile(changepasswordObjects.getSuccessfulMsg());
+			
+			assertEquals(webutils.gettext(changepasswordObjects.getSuccessfulMsg()), 
+					"Password changed successfully...!!!");
+		} catch (Exception e) {
+			webutils.waitUntilVisibile(changepasswordObjects.getCurrent_password());
+			webutils.sendkeys(changepasswordObjects.getCurrent_password(), "Datawrkz12");
+			webutils.sendkeys(changepasswordObjects.getNew_Password(), "Datawrkz1");
+			webutils.sendkeys(changepasswordObjects.getConfirmation_Password(), "Datawrkz1");
+			webutils.click(changepasswordObjects.getSaveChanges());
+			webutils.waitUntilVisibile(changepasswordObjects.getSuccessfulMsg());
+			
+			assertEquals(webutils.gettext(changepasswordObjects.getSuccessfulMsg()), 
+					"Password changed successfully...!!!");
 		
-		assertEquals(webutils.gettext(changepasswordObjects.getSuccessfulMsg()), 
-				"Password changed successfully...!!!");
+		}
 		
 	}
 
-	// @AfterClass
-	// public void afterClass() throws Exception {
-	// webutils.logOut();
-	// webutils.quit();
-	// }
+	 @AfterClass
+	 public void afterClass() throws Exception {
+	 webutils.logOut();
+	 webutils.quit();
+	 }
 
 	@DataProvider(name = "ChangePassword")
 	public static Object[][] Changepassword() throws IOException {
@@ -78,8 +91,8 @@ public class ChangePassword extends BaseClass {
 		System.out.println(totalrows);
 		int totalcolumns = config.getColumnCount("ChangePassword", 1);
 		System.out.println(totalcolumns);
-		Object[][] data = new Object[totalrows - 3][totalcolumns - 5];
-		for (int i = 1; i < totalrows - 2; i++) {
+		Object[][] data = new Object[totalrows - 2][totalcolumns - 5];
+		for (int i = 1; i < totalrows - 1; i++) {
 			for (int j = 5; j < totalcolumns; j++) {
 				data[i - 1][j - 5] = config.GetCellData(2, i, j);
 			}

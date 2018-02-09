@@ -71,6 +71,7 @@ public class Webutilities extends BaseClass {
 		Assert.assertEquals("Advertisers", data);
 		driver.switchTo().window(parentWindID);
 		System.out.println("exeuted");
+		driver.close();
 	}
 
 	public void login() throws Exception {
@@ -112,7 +113,6 @@ public class Webutilities extends BaseClass {
 			while (i.hasNext()) {
 				WebElement webelemen = i.next();
 				String data = webelemen.getText().trim();
-
 				if (data.equalsIgnoreCase(excelMessage)) {
 					count++;
 					System.out.println("actual: " + data);
@@ -124,9 +124,7 @@ public class Webutilities extends BaseClass {
 		}
 		System.out.println("");
 		return false;
-
 	}
-
 	public void scrollDown() {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,250)", "");

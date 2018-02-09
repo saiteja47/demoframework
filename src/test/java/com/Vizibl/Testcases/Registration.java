@@ -93,12 +93,14 @@ public class Registration extends BaseClass {
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
+		
 	}
 
-	@Test(priority = 2)//independent//
+	@Test(enabled=false,priority = 2)//independent//
 	public void verfyingUserAccountInDemoAccounts() throws Exception {
 		/* verfying user account in Demo accounts */
 		try {
+			getbrowser();
 			webutils.login();
 			webutils.waitUntilVisibile(commonObjects.getMenu_Left());
 			webutils.click(commonObjects.getDemoAccount_button());
@@ -111,31 +113,38 @@ public class Registration extends BaseClass {
 			/* clicking on change status */
 			// webutils.click(awaitingApprovalPageObjects.getChangeStatus());
 			Reporter.log("VerfingAccount is sucessfull");
-
+			
 		} catch (Exception e1) {
 			throw new Exception(e1.getMessage());
 		}
-
+		driver.quit();
 	}
 
 	@Test(priority = 3)
 	public void verfyingUserAccountInAdvertisers() throws Exception {
 		/* checking user account in advertisers list */
-		webutils.login();
-		webutils.waitUntilVisibile(commonObjects.getMenu_Left());
-		webutils.click(commonObjects.getMenu_Left(), "Advertiser");
-		webutils.selectByVisibleText(advertiserPageObjects.getRecordpPerPage(), VariableData.pageRecords);
-		webutils.selectingclient3(advertiserPageObjects.getAdvertiserNameList(), "Decibel",
-				advertiserPageObjects.getAdvertiserStatusList());
-		Reporter.log("Uesr is existing in Advertiser ");
-		System.out.println("test case passed");
+		try {
+			getbrowser();
+			webutils.login();
+			webutils.waitUntilVisibile(commonObjects.getMenu_Left());
+			webutils.click(commonObjects.getMenu_Left(), "Advertiser");
+			webutils.selectByVisibleText(advertiserPageObjects.getRecordpPerPage(), VariableData.pageRecords);
+			webutils.selectingclient3(advertiserPageObjects.getAdvertiserNameList(), "Decibel",
+					advertiserPageObjects.getAdvertiserStatusList());
+			Reporter.log("Uesr is existing in Advertiser ");
+			System.out.println("test case passed");
+		} catch (Exception e) {
+			
+			throw new Exception(e.getLocalizedMessage());
+		}
+		driver.close();
 	}
 
-	@AfterClass
+	/*@AfterClass
 	public void afterClass() throws Exception {
 		webutils.quit();
 	}
-
+*/
 	@DataProvider(name = "advertiserRegistration")
 	public static Object[][] advertiserRegistration() throws IOException {
 		Excelconfig config = new Excelconfig();
