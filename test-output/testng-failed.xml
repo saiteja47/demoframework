@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite name="Failed suite [Suite]">
+  <test name="Test(failed)">
     <classes>
+      <class name="com.Vizibl.Testcases.LoginPage">
+        <methods>
+          <include name="initiate"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.Vizibl.Testcases.LoginPage -->
       <class name="com.Vizibl.Testcases.Registration">
         <methods>
-          <include name="advertiserRegistration" invocation-numbers="0 2"/>
+          <include name="afterClass"/>
           <include name="initiate"/>
         </methods>
       </class> <!-- com.Vizibl.Testcases.Registration -->
+      <class name="com.Vizibl.ui.Registration">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.Vizibl.ui.Registration -->
+      <class name="com.Vizibl.Testcases.loginAfter_ForgetPassword_AfterChangingPassword">
+        <methods>
+          <include name="initiate"/>
+          <include name="forgetPassword_AfterChangingPassword" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.Vizibl.Testcases.loginAfter_ForgetPassword_AfterChangingPassword -->
+      <class name="com.Vizibl.Testcases.ForgetPassword">
+        <methods>
+          <include name="initiate"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.Vizibl.Testcases.ForgetPassword -->
+      <class name="com.Vizibl.Testcases.ChangePassword">
+        <methods>
+          <include name="afterClass"/>
+          <include name="initiate"/>
+        </methods>
+      </class> <!-- com.Vizibl.Testcases.ChangePassword -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

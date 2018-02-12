@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test">
-    <classes>
-      <class name="com.Vizibl.Testcases.LoginPage"/>
-      <class name="com.Vizibl.Testcases.ForgetPassword"/>
-      <class name="com.Vizibl.Testcases.Registration"/>
-      <class name="com.Vizibl.Testcases.CreateAdvertiser"/>
-       <class name="com.Vizibl.Testcases.ChangePassword"/>
-       <class name="com.Vizibl.Testcases.ForgetPassword_AfterChangingPassword"/>
-    </classes>
-  </test> <!-- Test -->
+	<test thread-count="5" name="Test">
+		<classes>
+
+			<class name="com.Vizibl.Testcases.LoginPage" />
+			<class name="com.Vizibl.Testcases.Registration" />
+			<class name="com.Vizibl.ui.Registration" />
+			<class name="com.Vizibl.Testcases.ForgetPassword" />
+			<class name="com.Vizibl.Testcases.ChangePassword" />
+			<class name="com.Vizibl.Testcases.loginAfter_ForgetPassword_AfterChangingPassword" />
+
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->

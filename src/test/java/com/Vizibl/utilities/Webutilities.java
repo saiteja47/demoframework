@@ -49,7 +49,6 @@ public class Webutilities extends BaseClass {
 		element.isDisplayed();
 		String text = element.getText().trim();
 		return text;
-
 	}
 
 	public void logOut() throws InterruptedException {
@@ -57,11 +56,9 @@ public class Webutilities extends BaseClass {
 		actions.moveToElement(homepageObjectes.getProfileName()).perform();
 		actions.doubleClick(homepageObjectes.getLogOut()).perform();
 		sleep();
-
 	}
 
 	public void window() throws InterruptedException {
-
 		Set<String> śet = driver.getWindowHandles();
 		Iterator<String> it = śet.iterator();
 		String parentWindID = it.next();
@@ -87,7 +84,6 @@ public class Webutilities extends BaseClass {
 			// result = true;
 		} catch (Throwable t) {
 			throw new Exception(t.getMessage());
-
 		}
 	}
 
@@ -104,7 +100,6 @@ public class Webutilities extends BaseClass {
 	public boolean verifyErrorMSg(List<WebElement> elements, String value) {
 		String[] values = value.split(";");
 		int count = 0;
-
 		System.out.println(values.length);
 		for (int j = 0; j < values.length; j++) {
 			String excelMessage = values[j].toString().trim();
@@ -125,6 +120,7 @@ public class Webutilities extends BaseClass {
 		System.out.println("");
 		return false;
 	}
+
 	public void scrollDown() {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,250)", "");
@@ -170,7 +166,6 @@ public class Webutilities extends BaseClass {
 		} catch (Exception e) {
 			Thread.sleep(1000);
 			e.printStackTrace();
-
 		}
 		return false;
 	}
@@ -230,7 +225,6 @@ public class Webutilities extends BaseClass {
 				}
 			}
 		}
-
 	}
 
 	public boolean verifyFieldValue(WebElement element) {
@@ -245,7 +239,6 @@ public class Webutilities extends BaseClass {
 	}
 
 	public void click(List<WebElement> elements, String value) {
-
 		try {
 			for (WebElement element : elements) {
 				if (element.getAttribute("title").equalsIgnoreCase(value)) {
@@ -257,7 +250,6 @@ public class Webutilities extends BaseClass {
 
 			e.printStackTrace();
 		}
-
 	}
 
 	public void selectingClient(List<WebElement> elements, String value, List<WebElement> elements2) {
@@ -266,7 +258,6 @@ public class Webutilities extends BaseClass {
 			for (int i = 0; i < elements.size(); i++) {
 				System.out.println(elements.get(i).getText());
 				if (elements.get(i).getText().equalsIgnoreCase(value)) {
-
 					elements2.get(i).click();
 					System.out.println(i);
 					break;
@@ -274,7 +265,6 @@ public class Webutilities extends BaseClass {
 			}
 			Reporter.log("No such kind of Advertiser" + value);
 		} catch (Exception e) {
-
 			e.printStackTrace();
 		}
 	}
@@ -298,7 +288,6 @@ public class Webutilities extends BaseClass {
 	public void selectingclient3(List<WebElement> elements, String value, List<WebElement> elements2) {
 
 		for (int i = 0; i < elements.size(); i++) {
-
 			if (elements.get(i).getText().equalsIgnoreCase(value)) {
 				String status = elements2.get(i).getText();
 				if (status.equalsIgnoreCase("Read-only")) {

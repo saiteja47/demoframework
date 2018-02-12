@@ -14,6 +14,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.Vizibl.utilities.BaseClass;
+import com.Vizibl.utilities.Dataprovider;
 import com.Vizibl.utilities.Excelconfig;
 import com.Vizibl.utilities.VariableData;
 import com.Vizibl.utilities.Webutilities;
@@ -29,11 +30,9 @@ public class Registration extends BaseClass {
 		webutils.waitForPageToLoad();
 		webutils.waitUntilVisibile(mainpageObjects.getRegister_Link());
 		webutils.click(mainpageObjects.getRegister_Link());
-
 	}
 
-	@Test(dataProvider = "advertiserRegistration", dataProviderClass = Registration.class, priority = 1)
-
+	@Test(dataProvider = "advertiserRegistration", dataProviderClass = Dataprovider.class, priority = 1)
 	public void advertiserRegistration(String ClientType, String orgName, String firstName, String lastName,
 			String email_id, String password, String password_confirmation, String contact_num, String website,
 			String address_line1, String address_line2, String country, String state, String city, String pincode,
@@ -70,32 +69,27 @@ public class Registration extends BaseClass {
 					webutils.waitUntilVisibile(mainpageObjects.getRegister_Link());
 					webutils.click(mainpageObjects.getRegister_Link());
 				}
-			} else if (action.equalsIgnoreCase("submit")) {
-
+			} 
+			else if (action.equalsIgnoreCase("submit")) {
 				webutils.scrollDown();
 				actions.sendKeys(Keys.TAB).build().perform();
 				try {
 					webutils.click(registrationObjects.getRegister());
 					webutils.waitUntilVisibile(commonObjects.getAdvertiser_Tiitle());
 					assertEquals("Advertisers", commonObjects.getAdvertiser_Tiitle());
-
 				} catch (Exception e) {
-
 					Assert.assertTrue(webutils.verifyErrorMSg(registrationObjects.getErrorMessages(), Expected));
 					actions.sendKeys(Keys.ESCAPE).build().perform();
 					webutils.waitUntilVisibile(mainpageObjects.getRegister_Link());
 					webutils.click(mainpageObjects.getRegister_Link());
 				}
-			} else if (action.equalsIgnoreCase(" ")) {
+			} else if (action.equalsIgnoreCase("")) {
 				webutils.click(registrationObjects.getCancel_button());
 			}
-
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
-		
 	}
-
 	@Test(enabled=false,priority = 2)//independent//
 	public void verfyingUserAccountInDemoAccounts() throws Exception {
 		/* verfying user account in Demo accounts */
@@ -113,7 +107,6 @@ public class Registration extends BaseClass {
 			/* clicking on change status */
 			// webutils.click(awaitingApprovalPageObjects.getChangeStatus());
 			Reporter.log("VerfingAccount is sucessfull");
-			
 		} catch (Exception e1) {
 			throw new Exception(e1.getMessage());
 		}
@@ -134,30 +127,16 @@ public class Registration extends BaseClass {
 			Reporter.log("Uesr is existing in Advertiser ");
 			System.out.println("test case passed");
 		} catch (Exception e) {
-			
 			throw new Exception(e.getLocalizedMessage());
 		}
 		driver.close();
 	}
 
-	/*@AfterClass
+	@AfterClass
 	public void afterClass() throws Exception {
 		webutils.quit();
 	}
-*/
-	@DataProvider(name = "advertiserRegistration")
-	public static Object[][] advertiserRegistration() throws IOException {
-		Excelconfig config = new Excelconfig();
-		int totalrows = config.getRowcount(3);
-		int totalcolumns = config.getColumnCount("advertiserRegistration", 1);
-		Object[][] data = new Object[totalrows - 1][totalcolumns - 5];
-		for (int i = 1; i < totalrows; i++) {
-			for (int j = 5; j < totalcolumns; j++) {
-				data[i - 1][j - 5] = config.GetCellData(3, i, j);
-			}
-		}
-		return data;
-	}
+
 	
 
 }

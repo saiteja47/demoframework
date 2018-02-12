@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.Vizibl.Testcases.Registration">
+      <class name="com.Vizibl.Testcases.ChangePassword">
         <methods>
-          <include name="advertiserRegistration" invocation-numbers="0 2"/>
+          <include name="validChangePassword"/>
           <include name="initiate"/>
         </methods>
-      </class> <!-- com.Vizibl.Testcases.Registration -->
+      </class> <!-- com.Vizibl.Testcases.ChangePassword -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

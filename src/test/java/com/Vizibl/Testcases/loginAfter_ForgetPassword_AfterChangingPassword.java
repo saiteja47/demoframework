@@ -1,19 +1,16 @@
 package com.Vizibl.Testcases;
 
 import static org.testng.Assert.assertTrue;
-
-import java.io.IOException;
 import java.net.MalformedURLException;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.Vizibl.utilities.BaseClass;
-import com.Vizibl.utilities.Excelconfig;
+import com.Vizibl.utilities.Dataprovider;
 import com.Vizibl.utilities.Webutilities;
 
 public class loginAfter_ForgetPassword_AfterChangingPassword extends BaseClass {
-	
-		/*	Manual steps should complete before this class*/
+
+	/* Manual steps should complete before this class */
 
 	Webutilities webutils = new Webutilities();
 
@@ -23,7 +20,7 @@ public class loginAfter_ForgetPassword_AfterChangingPassword extends BaseClass {
 		webutils.click(mainpageObjects.getLogin_button());
 	}
 
-	@Test(dataProvider = "afterChangingPassword")
+	@Test(dataProvider = "afterChangingPassword", dataProviderClass = Dataprovider.class)
 	public void forgetPassword_AfterChangingPassword(String username, String password, String expectedResult)
 			throws Exception {
 
@@ -34,31 +31,12 @@ public class loginAfter_ForgetPassword_AfterChangingPassword extends BaseClass {
 		webutils.waitUntilVisibile(loginpageObjects.getSignIn_button());
 		webutils.click(loginpageObjects.getSignIn_button());
 		webutils.sleep();
-
 		try {
 			assertTrue(webutils.verifyErrorMSg(loginpageObjects.getErrorMessages(), expectedResult));
-
 		} catch (Exception e) {
 			System.out.println("login successful");
 			webutils.logOut();
 		}
 		webutils.sleep();
-	}
-
-	@DataProvider(name = "afterChangingPassword")
-
-	public static Object[][] afterChangingPassword() throws IOException {
-		Excelconfig config = new Excelconfig();
-		int totalrows = config.getRowcount(4);
-		System.out.println(totalrows);
-		int totalcolumns = config.getColumnCount("afterChangingPassword", 2);
-		System.out.println(totalcolumns);
-		Object[][] data = new Object[totalrows - 2][totalcolumns - 5];
-		for (int i = 2; i < totalrows; i++) {
-			for (int j = 5; j < totalcolumns; j++) {
-				data[i - 2][j - 5] = config.GetCellData(4, i, j);
-			}
-		}
-		return data;
 	}
 }
