@@ -165,4 +165,10 @@ public class RegistrationObjects {
 		return cross_button;
 	}
 
+	@FindBy(id="create_adv")
+	private WebElement create_button;
+
+	public WebElement getcreate_button() {
+		return create_button;
+	}
 }

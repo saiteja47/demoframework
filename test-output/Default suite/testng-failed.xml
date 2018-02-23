@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.Vizibl.Testcases.ChangePassword">
+      <class name="com.Vizibl.Testcases.asserterror">
         <methods>
-          <include name="validChangePassword"/>
-          <include name="initiate"/>
+          <include name="test1"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.Vizibl.Testcases.ChangePassword -->
+      </class> <!-- com.Vizibl.Testcases.asserterror -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

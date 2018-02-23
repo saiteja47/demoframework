@@ -11,12 +11,7 @@ public class CreateAdvertiserObjects {
 	public CreateAdvertiserObjects(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-	
-	
-	
-	
-	
-	
+
 	@FindBy(xpath="//a[class='btn green fa fa-plus']")
 	private WebElement advertiser_button;
 	
@@ -27,6 +22,37 @@ public class CreateAdvertiserObjects {
 	
 	//Advertiser creation page //
 	
+	public WebElement getAdvertiser_Name() {
+		return advertiser_Name;
+	}
+	public WebElement getAdvertiser_State() {
+		return advertiser_State;
+	}
+	public WebElement getAdvertiser_Agency_ID() {
+		return advertiser_Agency_ID;
+	}
+	public WebElement getAdvertiser_Account_Manager_ID() {
+		return advertiser_Account_Manager_ID;
+	}
+	public WebElement getAdvertiser_Orgname() {
+		return advertiser_Orgname;
+	}
+	public WebElement getAdvertiser_Website() {
+		return advertiser_Website;
+	}
+	public WebElement getAdvertiser_Address1() {
+		return advertiser_Address1;
+	}
+	public WebElement getAdvertiser_Address2() {
+		return advertiser_Address2;
+	}
+	public WebElement getAdvertiser_Country() {
+		return advertiser_Country;
+	}
+	public WebElement getAdvertiser_City() {
+		return advertiser_City;
+	}
+
 	@FindBy(id="user_name_appnexus")
 	private WebElement advertiser_Name;
 	
@@ -48,6 +74,10 @@ public class CreateAdvertiserObjects {
 	@FindBy(id="user_address1")
 	private WebElement advertiser_Address1;
 
+	public WebElement getAdvertiser_Pincode() {
+		return pincode;
+	}
+
 	@FindBy(id="user_address2")
 	private WebElement advertiser_Address2;
 	
@@ -56,7 +86,13 @@ public class CreateAdvertiserObjects {
 	@FindBy(id="user_city")
 	private WebElement advertiser_City;
 	
+	@FindBy(id = "pincode")
+	private WebElement pincode;
 	
-	
-	
+	@FindBy(id="create_adv")
+	private WebElement Advertiser_create_button;
+
+	public WebElement getAdvertiser_create_button() {
+		return Advertiser_create_button;
+	}
 }

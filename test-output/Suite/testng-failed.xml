@@ -11,6 +11,7 @@
       </class> <!-- com.Vizibl.Testcases.LoginPage -->
       <class name="com.Vizibl.Testcases.Registration">
         <methods>
+          <include name="verfyingUserAccountInAdvertisers"/>
           <include name="afterClass"/>
           <include name="initiate"/>
         </methods>

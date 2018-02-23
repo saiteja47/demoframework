@@ -13,11 +13,11 @@ String username2="srinivasarao.r@datawrkz.com";
 String password2="Datawrkz1";
 
 
-String chromePath="F:\\Vizibl\\utilities\\chromedriver.exe"; 
-String geckoPath ="F:\\Vizibl\\utilities\\geckodriver.exe" ;
+String chromePath="E:\\Vizibl\\utilities\\chromedriver.exe"; 
+String geckoPath ="E:\\Vizibl\\utilities\\geckodriver.exe" ;
 
 
-String excelPath ="F:\\Vizibl\\TestExcelData\\TestData.xlsx";
+String excelPath ="E:\\Vizibl\\TestExcelData\\TestData.xlsx";
 
 
 

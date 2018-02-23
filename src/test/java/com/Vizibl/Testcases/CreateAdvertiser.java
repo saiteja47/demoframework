@@ -19,32 +19,28 @@ public class CreateAdvertiser extends BaseClass {
 
 	}
 
-//	@Test(dataProvider = "creatingNewAdvertiser", dataProviderClass = CreateAdvertiser.class)
-//	public void creatingNewAdvertiser(String ClientType, String orgName, String firstName, String lastName,
-//			String email_id, String password, String password_confirmation, String contact_num, String website,
-//			String address_line1, String address_line2, String country, String state, String city, String pincode)
-//			throws InterruptedException {
-//	
-//		webutils.click(commonObjects.getMenu_Left(), "Advertiser");
-//		webutils.selectByVisibleText(registrationObjects.getClientType(), ClientType);
-//		webutils.sendkeys(registrationObjects.getOrganizationName(), orgName);
-//		webutils.sendkeys(registrationObjects.getFirstName(), firstName);
-//		webutils.sendkeys(registrationObjects.getLastName(), lastName);
-//		webutils.sendkeys(registrationObjects.getEmail_id(), email_id);
-//		webutils.sendkeys(registrationObjects.getPassword(), password);
-//		webutils.sendkeys(registrationObjects.getPassword_confirmation(), password_confirmation);
-//		webutils.sendkeys(registrationObjects.getContact_num(), contact_num);
-//		webutils.sendkeys(registrationObjects.getWebsite(), website);
-//		webutils.sendkeys(registrationObjects.getAddress_line1(), address_line1);
-//		webutils.sendkeys(registrationObjects.getAddress_line2(), address_line2);
-//		webutils.selectByVisibleText(registrationObjects.getCountry(), country);
-//		webutils.sendkeys(registrationObjects.getState(), state);
-//		webutils.sendkeys(registrationObjects.getCity(), city);
-//		webutils.sendkeys(registrationObjects.getPincode(), pincode);
-//		//webutils.click(registrationObjects.getSubmit_button());
-//		webutils.click(registrationObjects.getCancel_button());
-//
-//	}
+	@Test(dataProvider = "creatingNewAdvertiser", dataProviderClass = CreateAdvertiser.class)
+	public void creatingNewAdvertiser(String ClientType, String orgName, String firstName, String lastName,
+			String email_id, String password, String password_confirmation, String contact_num, String website,
+			String address_line1, String address_line2, String country, String state, String city, String pincode)
+			throws InterruptedException {
+	
+		webutils.click(commonObjects.getMenu_Left(), "Advertiser");
+		webutils.sendkeys(createAdvertiserObjects.getAdvertiser_Name(), "value");
+		webutils.selectByVisibleText(createAdvertiserObjects.getAdvertiser_State(), "");
+		webutils.selectByVisibleText(createAdvertiserObjects.getAdvertiser_Agency_ID(), "");	
+		webutils.selectByVisibleText(createAdvertiserObjects.getAdvertiser_Account_Manager_ID(), "");
+		webutils.sendkeys(createAdvertiserObjects.getAdvertiser_Orgname(), "");
+		webutils.sendkeys(createAdvertiserObjects.getAdvertiser_Website(), "");
+		webutils.sendkeys(createAdvertiserObjects.getAdvertiser_Address1(), address_line1);
+		webutils.sendkeys(createAdvertiserObjects.getAdvertiser_Address2(), address_line2);
+		webutils.selectByVisibleText(createAdvertiserObjects.getAdvertiser_Country(), country);
+		webutils.sendkeys(createAdvertiserObjects.getAdvertiser_City(), city);
+		webutils.sendkeys(createAdvertiserObjects.getAdvertiser_State(), state);
+		webutils.sendkeys(createAdvertiserObjects.getAdvertiser_Pincode(), pincode);
+		webutils.click(createAdvertiserObjects.getAdvertiser_create_button());
+
+	}
 
 	@AfterClass
 	public void afterClass() throws Exception {

@@ -1,21 +1,16 @@
 package com.Vizibl.Testcases;
 
 import static org.junit.Assert.assertEquals;
-
-import java.io.IOException;
 import java.net.MalformedURLException;
-
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.Vizibl.utilities.BaseClass;
 import com.Vizibl.utilities.Dataprovider;
-import com.Vizibl.utilities.Excelconfig;
 import com.Vizibl.utilities.VariableData;
 import com.Vizibl.utilities.Webutilities;
 

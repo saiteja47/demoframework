@@ -1,99 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="7" passed="7">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="93967" started-at="2018-02-12T12:32:43Z" finished-at="2018-02-12T12:34:17Z">
+  <suite name="Default suite" duration-ms="30285" started-at="2018-02-22T13:52:08Z" finished-at="2018-02-22T13:52:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="93967" started-at="2018-02-12T12:32:43Z" finished-at="2018-02-12T12:34:17Z">
-      <class name="com.Vizibl.Testcases.ChangePassword">
-        <test-method status="PASS" signature="initiate()[pri:0, instance:com.Vizibl.Testcases.ChangePassword@5c5a1b69]" name="initiate" is-config="true" duration-ms="24977" started-at="2018-02-12T18:02:43Z" finished-at="2018-02-12T18:03:08Z">
+    <test name="Default test" duration-ms="30285" started-at="2018-02-22T13:52:08Z" finished-at="2018-02-22T13:52:38Z">
+      <class name="com.Vizibl.Testcases.Testcase">
+        <test-method status="PASS" signature="beforeclass()[pri:0, instance:com.Vizibl.Testcases.Testcase@887af79]" name="beforeclass" is-config="true" duration-ms="14858" started-at="2018-02-22T19:22:08Z" finished-at="2018-02-22T19:22:23Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- initiate -->
-        <test-method status="PASS" signature="changePassword(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.ChangePassword@5c5a1b69]" name="changePassword" duration-ms="6131" started-at="2018-02-12T18:03:11Z" data-provider="ChangePassword" finished-at="2018-02-12T18:03:18Z">
+        </test-method> <!-- beforeclass -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.Testcase@887af79]" name="testLogin" duration-ms="2171" started-at="2018-02-22T19:22:25Z" data-provider="adminLogin" finished-at="2018-02-22T19:22:27Z">
           <params>
             <param index="0">
+              <value>
+                <![CDATA[srinivasarao.r@datawrkz.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.Testcase@887af79]" name="testLogin" duration-ms="1796" started-at="2018-02-22T19:22:27Z" data-provider="adminLogin" finished-at="2018-02-22T19:22:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Datawrkz1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.Testcase@887af79]" name="testLogin" duration-ms="4747" started-at="2018-02-22T19:22:29Z" data-provider="adminLogin" finished-at="2018-02-22T19:22:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[srinivasarao.r@datawrkz.com]]>
+              </value>
+            </param>
+            <param index="1">
               <value>
                 <![CDATA[Datawrkz1234]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[Datawrkz1]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Datawrkz1]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[current_password - is invalid;]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- changePassword -->
-        <test-method status="PASS" signature="changePassword(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.ChangePassword@5c5a1b69]" name="changePassword" duration-ms="4441" started-at="2018-02-12T18:03:18Z" data-provider="ChangePassword" finished-at="2018-02-12T18:03:22Z">
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.Testcase@887af79]" name="testLogin" duration-ms="4011" started-at="2018-02-22T19:22:34Z" data-provider="adminLogin" finished-at="2018-02-22T19:22:38Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Datawrkz123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Datawrkz123]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Password can't be blank;]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- changePassword -->
-        <test-method status="PASS" signature="changePassword(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.ChangePassword@5c5a1b69]" name="changePassword" duration-ms="4450" started-at="2018-02-12T18:03:22Z" data-provider="ChangePassword" finished-at="2018-02-12T18:03:26Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Datawrkz1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Datawrkz24]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Password can't be blank;]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- changePassword -->
-        <test-method status="PASS" signature="changePassword(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.ChangePassword@5c5a1b69]" name="changePassword" duration-ms="4128" started-at="2018-02-12T18:03:26Z" data-provider="ChangePassword" finished-at="2018-02-12T18:03:31Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Datawrkz1]]>
+                <![CDATA[srinivasarao@datawrkz.com]]>
               </value>
             </param>
             <param index="1">
@@ -101,98 +71,11 @@
                 <![CDATA[Datawrkz1]]>
               </value>
             </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Confirm Password can't be blank;]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- changePassword -->
-        <test-method status="PASS" signature="changePassword(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.ChangePassword@5c5a1b69]" name="changePassword" duration-ms="4475" started-at="2018-02-12T18:03:31Z" data-provider="ChangePassword" finished-at="2018-02-12T18:03:35Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Datawrkz1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Datawrkz2$]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Datawrkz2$]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Password Must contain Alleast One Uppercase latter, One LowerCase Latter and One one digit;]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- changePassword -->
-        <test-method status="PASS" signature="changePassword(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.ChangePassword@5c5a1b69]" name="changePassword" duration-ms="4396" started-at="2018-02-12T18:03:35Z" data-provider="ChangePassword" finished-at="2018-02-12T18:03:39Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Datawrkz1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Datawrkz1]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[datawrkz1]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Confirm Password is not same as Password;]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- changePassword -->
-        <test-method status="PASS" signature="validChangePassword(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.Vizibl.Testcases.ChangePassword@5c5a1b69]" name="validChangePassword" duration-ms="27706" started-at="2018-02-12T18:03:40Z" data-provider="validChangePassword" finished-at="2018-02-12T18:04:08Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Datawrkz1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Datawrkz12]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Datawrkz12]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validChangePassword -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.Vizibl.Testcases.ChangePassword@5c5a1b69]" name="afterClass" is-config="true" duration-ms="8994" started-at="2018-02-12T18:04:08Z" finished-at="2018-02-12T18:04:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- com.Vizibl.Testcases.ChangePassword -->
+        </test-method> <!-- testLogin -->
+      </class> <!-- com.Vizibl.Testcases.Testcase -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
